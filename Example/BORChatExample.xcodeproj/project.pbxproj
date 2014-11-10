@@ -55,8 +55,9 @@
 		76ECDE303200ACE0EFC5879B /* BORChatExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BORChatExampleTests.m; sourceTree = "<group>"; };
 		76ECDF7EA0D1114CB6967D82 /* BORMyAppChatRoomController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BORMyAppChatRoomController.m; sourceTree = "<group>"; };
 		76ECDFC40F96D0DB64C230C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		841BBC98D065E7D7D8B64840 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9D12E826B671EE3C0DAAAC98 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A5840DC176264B7EAE3482BB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8315506F37B45809E5F8D80 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +134,7 @@
 				76ECD3ADD3DD5FCE6DB14D80 /* Frameworks */,
 				76ECDFB66D452078BC3314C8 /* BORChatExample */,
 				76ECD09D6AF964CC1D13BCD0 /* BORChatExampleTests */,
-				D8315506F37B45809E5F8D80 /* Pods.xcconfig */,
+				C7EFC6B4E42844D8912F4F53 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +159,15 @@
 				76ECDF7EA0D1114CB6967D82 /* BORMyAppChatRoomController.m */,
 			);
 			path = BORChatExample;
+			sourceTree = "<group>";
+		};
+		C7EFC6B4E42844D8912F4F53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				841BBC98D065E7D7D8B64840 /* Pods.release.xcconfig */,
+				9D12E826B671EE3C0DAAAC98 /* Pods.debug.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +221,7 @@
 				ORGANIZATIONNAME = "Bohdan Orlov";
 				TargetAttributes = {
 					76ECD0F3C6E25A24A49DEB75 = {
-						DevelopmentTeam = 8K9ULE3452;
+						DevelopmentTeam = R9UTM4Y983;
 					};
 				};
 			};
@@ -267,7 +277,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		381B6429D0534EDFB36CD607 /* Check Pods Manifest.lock */ = {
@@ -312,7 +322,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -376,7 +386,7 @@
 /* Begin XCBuildConfiguration section */
 		76ECD1A238C74D3AA7897AB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8315506F37B45809E5F8D80 /* Pods.xcconfig */;
+			baseConfigurationReference = 841BBC98D065E7D7D8B64840 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -385,16 +395,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BORChatExample/BORChatExample-Prefix.pch";
 				INFOPLIST_FILE = "BORChatExample/BORChatExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		76ECD21F236FA5B7DD7772BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8315506F37B45809E5F8D80 /* Pods.xcconfig */;
+			baseConfigurationReference = 841BBC98D065E7D7D8B64840 /* Pods.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -410,6 +421,7 @@
 		};
 		76ECD7D9E38F86565E858462 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D12E826B671EE3C0DAAAC98 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -434,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -442,7 +454,7 @@
 		};
 		76ECD8433998717011E412D3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8315506F37B45809E5F8D80 /* Pods.xcconfig */;
+			baseConfigurationReference = 9D12E826B671EE3C0DAAAC98 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -458,7 +470,7 @@
 		};
 		76ECD952564DE72E55BF05C3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8315506F37B45809E5F8D80 /* Pods.xcconfig */;
+			baseConfigurationReference = 9D12E826B671EE3C0DAAAC98 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -467,15 +479,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BORChatExample/BORChatExample-Prefix.pch";
 				INFOPLIST_FILE = "BORChatExample/BORChatExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		76ECDF43083A2149A660F3AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 841BBC98D065E7D7D8B64840 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -506,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};

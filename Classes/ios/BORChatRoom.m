@@ -113,6 +113,25 @@ static const int BORChatRoomDefaultSpacing = 10;
 
 #pragma mark - Accessors
 
+-(UIColor *)BGColor{
+    return local_BGColor;
+}
+
+-(void) setBGColor:(UIColor *)aBGColor{
+    local_BGColor =aBGColor;
+    [self.view setBackgroundColor: local_BGColor];
+}
+
+- (NSNumber *)ShowChatInput{
+    return [NSNumber numberWithBool:local_ShowChatInput];
+}
+
+- (void) setShowChatInput:(NSNumber *)aShowChatInput{
+    local_ShowChatInput = [aShowChatInput boolValue];
+    [self updateMessageTextViewSizeAndInset:self.messageTextView];
+}
+
+
 - (UIView *)messageContainer {
     if (_messageContainer)
         return _messageContainer;
@@ -220,12 +239,16 @@ static const int BORChatRoomDefaultSpacing = 10;
 }
 
 - (void)updateMessageTextViewSizeAndInset:(UITextView *)textView {
+    if(local_ShowChatInput){
     CGFloat navigationBarHeight = 0;
     if (self.navigationController && !self.navigationController.navigationBarHidden) {
         navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
     }
     self.messageTextViewHeightConstraint.constant = MIN(MAX([textView contentSize].height, BORChatRoomMessageContainerHeight - BORChatRoomDefaultSpacing * 2), self.view.frame.size.height - BORChatRoomDefaultSpacing * 2 - navigationBarHeight - [UIApplication sharedApplication].statusBarFrame.size.height - self.keyboardSize.height - 15);
     [self configureInsetsOfCollectionView:self.chatCollectionViewController.collectionView];
+    }else{
+        [self.messageContainer setHidden:YES];
+    }
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {

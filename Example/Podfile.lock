@@ -2,13 +2,9 @@ PODS:
   - BORChat (0.1.0)
 
 DEPENDENCIES:
-  - BORChat (from `../BORChat.podspec`)
-
-EXTERNAL SOURCES:
-  BORChat:
-    :path: ../BORChat.podspec
+  - BORChat
 
 SPEC CHECKSUMS:
-  BORChat: 86edae431c5b4e1dfe2c3c5421065c728ca5be13
+  BORChat: af92df982e6e6d9b8fd27ec21aaf0a309f2e05a8
 
-COCOAPODS: 0.31.1
+COCOAPODS: 0.34.4
